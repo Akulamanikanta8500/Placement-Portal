@@ -1,0 +1,36 @@
+.jobs-container {
+  color: #f8fafc;
+}
+
+.bg-gold {
+  background-color: var(--svu-gold) !important;
+}
+
+.text-gold {
+  color: var(--svu-gold) !important;
+}
+
+.btn-gold {
+  background-color: var(--svu-gold);
+  color: #0f172a;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+  background-color: #d4ae6a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+}
+
+.btn-gold:disabled {
+  opacity: 0.6;
+}
+
+.glass-panel {
+  transition: transform 0.3s ease;
+}
+
+.glass-panel:hover {
+  transform: translateY(-5px);
+}

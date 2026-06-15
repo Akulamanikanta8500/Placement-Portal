@@ -1,0 +1,6 @@
+@echo off
+echo Starting Backend...
+start cmd /k "cd backend && .\mvnw.cmd spring-boot:run"
+
+echo Starting Frontend...
+start cmd /k "cd frontend && npm run dev"

@@ -1,0 +1,199 @@
+:root {
+  --primary: #965cf8;       /* Vibrant Purple/Indigo */
+  --primary-hover: #b185ff;
+  --secondary: #d946ef;     /* Fuchsia/Pink accent */
+  --accent: #8b5cf6;
+  --background: #0f0728;    /* Deep dark indigo base */
+  --surface: rgba(30, 20, 60, 0.65); 
+  --surface-border: rgba(150, 92, 248, 0.25);
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --success: #10b981;
+  --error: #ef4444;
+  --svu-blue: #965cf8;      
+  --svu-gold: #fcd34d;      
+  --glass-border: rgba(150, 92, 248, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  min-height: 100vh;
+  
+  /* Remotly-style Background Image */
+  background-image: 
+    linear-gradient(to bottom, rgba(10, 6, 28, 0.8), rgba(15, 7, 40, 0.95)),
+    url('/hero-bg.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: var(--surface);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid var(--surface-border);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255,255,255,0.05);
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+}
+
+.glass-panel:hover {
+  border-color: rgba(150, 92, 248, 0.5);
+  box-shadow: 0 20px 40px rgba(150, 92, 248, 0.15), inset 0 1px 1px rgba(255,255,255,0.05);
+}
+
+/* Base Form Elements */
+input, select, textarea {
+  width: 100%;
+  padding: 14px 18px;
+  margin: 8px 0 16px;
+  background: rgba(15, 7, 40, 0.8);
+  border: 1px solid var(--surface-border);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(150, 92, 248, 0.25);
+  background: rgba(20, 10, 50, 0.9);
+}
+
+button {
+  width: 100%;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 20px rgba(150, 92, 248, 0.4);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(150, 92, 248, 0.6);
+  filter: brightness(1.1);
+}
+
+.btn-glass {
+  background: rgba(150, 92, 248, 0.15);
+  color: var(--text-primary);
+  border: 2px solid var(--primary);
+  box-shadow: 0 4px 15px rgba(150, 92, 248, 0.2);
+}
+.btn-glass:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.text-center { text-align: center; }
+.mb-4 { margin-bottom: 20px; }
+.mt-4 { margin-top: 20px; }
+
+.svu-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.svu-text-gold {
+  color: var(--svu-gold);
+}
+
+.section-title {
+  border-left: 5px solid var(--primary);
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0728;
+}
+::-webkit-scrollbar-thumb {
+  background: #4c1d95;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5cf6;
+}
+
+/* Base table adjustments for dark theme */
+.table {
+  color: var(--text-primary) !important;
+  background-color: transparent !important;
+  border-color: rgba(150, 92, 248, 0.15) !important;
+  --bs-table-bg: transparent !important;
+  --bs-table-color: var(--text-primary) !important;
+  --bs-table-border-color: rgba(150, 92, 248, 0.15) !important;
+  margin-bottom: 0 !important;
+}
+
+.table th {
+  color: var(--primary) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  border-bottom: 2px solid rgba(150, 92, 248, 0.3) !important;
+  padding: 16px 12px !important;
+  background-color: transparent !important;
+}
+
+.table td {
+  color: var(--text-secondary) !important;
+  padding: 16px 12px !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(150, 92, 248, 0.1) !important;
+  transition: all 0.2s ease;
+}
+
+/* Ensure bold text or names stand out in white */
+.table td.fw-bold, .table td strong, .table td .fw-bold {
+  color: var(--text-primary) !important;
+}
+
+/* Stunning hover effect for table rows */
+.table-hover tbody tr {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(150, 92, 248, 0.08) !important;
+}
+
+.table-hover tbody tr:hover td {
+  color: var(--text-primary) !important;
+}

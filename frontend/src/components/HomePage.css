@@ -1,0 +1,26 @@
+.home-container {
+  color: #f8fafc;
+}
+
+.transition-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.transition-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.45);
+}
+
+.welcome-section h1 {
+  text-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+}
+
+.announcement-item h5 {
+  color: #f8fafc;
+  margin-top: 0.5rem;
+}
+
+.list-group-item:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: var(--svu-gold) !important;
+}

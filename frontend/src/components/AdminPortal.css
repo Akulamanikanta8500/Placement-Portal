@@ -1,0 +1,36 @@
+.admin-container {
+  color: #f8fafc;
+}
+
+.table-dark {
+  --bs-table-bg: transparent;
+  --bs-table-hover-bg: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.table > :not(caption) > * > * {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--svu-gold);
+  color: #f8fafc;
+  box-shadow: 0 0 0 0.25rem rgba(197, 160, 89, 0.25);
+}
+
+.btn-primary {
+  background-color: var(--svu-blue);
+  border-color: var(--svu-blue);
+}
+
+.btn-primary:hover {
+  background-color: #004080;
+  border-color: #004080;
+}

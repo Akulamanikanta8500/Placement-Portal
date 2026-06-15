@@ -1,0 +1,178 @@
+.dashboard-container {
+  padding-top: 40px;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  margin-bottom: 32px;
+}
+
+.dashboard-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.highlight {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.logout-btn {
+  width: auto;
+  padding: 10px 20px;
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.logout-btn:hover {
+  background: var(--error);
+  color: white;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+}
+
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.filter-section {
+  padding: 24px;
+}
+
+.filter-form {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.filter-form input {
+  margin: 0;
+  flex: 1;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.filter-btn {
+  width: auto;
+}
+
+.clear-filter-btn {
+  background: rgba(148, 163, 184, 0.2);
+  color: var(--text-primary);
+}
+
+.clear-filter-btn:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+.table-section {
+  padding: 24px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.students-table th,
+.students-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--surface-border);
+}
+
+.students-table th {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.students-table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cgpa-pill {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.cgpa-pill.high {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.cgpa-pill.med {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.cgpa-pill.low {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.no-data {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-secondary);
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 40px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .filter-form {
+    flex-direction: column;
+  }
+  
+  .filter-actions {
+    width: 100%;
+  }
+}

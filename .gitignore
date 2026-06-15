@@ -1,0 +1,9 @@
+# Exclude local installer files
+jdk-17.msi
+
+# Exclude local database files
+backend/data/
+
+# OS files
+.DS_Store
+Thumbs.db
