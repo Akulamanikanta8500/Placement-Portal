@@ -197,3 +197,93 @@ button:hover {
 .table-hover tbody tr:hover td {
   color: var(--text-primary) !important;
 }
+
+/* Dark glassmorphic styling overrides for Bootstrap modals */
+.modal-content {
+  background: var(--surface) !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border: 1px solid var(--surface-border) !important;
+  color: var(--text-primary) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* High-contrast text utility overrides for dark mode readability */
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.text-muted {
+  color: #a1a1aa !important;
+}
+
+.btn-link {
+  color: var(--primary) !important;
+}
+
+.btn-link:hover {
+  color: var(--primary-hover) !important;
+}
+
+/* Custom premium styles for eligibility badges */
+.badge-eligible {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+  color: #10b981 !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+  font-weight: 600 !important;
+}
+
+.badge-ineligible {
+  background-color: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+  font-weight: 600 !important;
+}
+
+/* Premium Tab Switcher Button Group */
+.btn-group.glass-panel .btn {
+  border: none !important;
+  box-shadow: none !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Unselected tab */
+.btn-group.glass-panel .btn-link {
+  color: var(--text-secondary) !important;
+}
+
+.btn-group.glass-panel .btn-link:hover {
+  color: var(--text-primary) !important;
+  background-color: rgba(150, 92, 248, 0.05) !important;
+}
+
+/* Selected tab */
+.btn-group.glass-panel .btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+/* Form elements dark theme overrides */
+.form-control, .form-select {
+  background-color: rgba(15, 7, 40, 0.85) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--surface-border) !important;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: rgba(20, 10, 50, 0.95) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 4px rgba(150, 92, 248, 0.25) !important;
+}
+
+/* Make select dropdown options readable in all browsers */
+.form-select option {
+  background-color: #0f0728 !important;
+  color: var(--text-primary) !important;
+}

@@ -43,6 +43,10 @@ public class JobApplicationController {
             return ResponseEntity.badRequest().body("Already applied for this drive");
         }
 
+        if (student.getCgpa() < 6.0) {
+            return ResponseEntity.badRequest().body("Not eligible: Your CGPA is below the minimum required portal threshold of 6.0");
+        }
+
         if (student.getCgpa() < jobDrive.getMinCgpa()) {
             return ResponseEntity.badRequest().body("Not eligible due to CGPA criteria");
         }

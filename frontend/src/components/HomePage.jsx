@@ -51,6 +51,66 @@ const quickLinksData = {
   }
 };
 
+const statsDetails = {
+  placements: {
+    title: 'Placement Statistics (2024 Batch)',
+    content: (
+      <div className="text-secondary">
+        <p>Our university has achieved a phenomenal placement record for the 2024 graduating class:</p>
+        <ul className="mt-2">
+          <li><strong>Placement Rate:</strong> 92% of eligible students placed successfully.</li>
+          <li><strong>Total Placed:</strong> 414 out of 450 registered candidates.</li>
+          <li><strong>Highest Recruiters:</strong> Information Technology (65%), Core Tech (20%), Consulting (15%).</li>
+          <li><strong>Top Recruiters by Numbers:</strong> TCS (120 students), Wipro (85 students).</li>
+        </ul>
+      </div>
+    )
+  },
+  partners: {
+    title: 'Recruiting Partners',
+    content: (
+      <div className="text-secondary">
+        <p>Over 150 leading national and multinational corporations partner with SVU for campus placements:</p>
+        <ul className="mt-2">
+          <li><strong>Tier-1 Recruiters:</strong> Google, Microsoft, Amazon, Adobe.</li>
+          <li><strong>Global IT Services:</strong> TCS, Wipro, Infosys, Cognizant, Accenture, Capgemini.</li>
+          <li><strong>Core & Product Teams:</strong> L&T, Tata Motors, Bosch, Qualcomm.</li>
+          <li><strong>Average recruiting partners per year:</strong> 120-150 companies.</li>
+        </ul>
+      </div>
+    )
+  },
+  package: {
+    title: 'Package & Compensation Highlights',
+    content: (
+      <div className="text-secondary">
+        <p>SVU graduates command competitive packages across sectors:</p>
+        <ul className="mt-2">
+          <li><strong>Highest Package:</strong> 45 LPA (Offered by Google to CSE students).</li>
+          <li><strong>Average CTC:</strong> 6.8 LPA (Across all branches).</li>
+          <li><strong>Median CTC:</strong> 5.5 LPA.</li>
+          <li><strong>Top 10% Average Package:</strong> 18.5 LPA.</li>
+        </ul>
+      </div>
+    )
+  },
+  drives: {
+    title: 'Active Job Drives',
+    content: (
+      <div className="text-secondary">
+        <p>Ongoing and upcoming recruitment campaigns for students:</p>
+        <ul className="mt-2">
+          <li><strong>Current Active Drives:</strong> Wipro Elite, TCS Digital, Google Associate.</li>
+          <li><strong>Open Applications:</strong> 12 active drives currently accepting forms.</li>
+          <li><strong>Eligible Streams:</strong> B.Tech (CSE, ECE, EEE, IT), MCA, M.Tech.</li>
+          <li><strong>Upcoming next week:</strong> Cognizant GenC, Accenture ASE.</li>
+        </ul>
+        <p className="small mt-3">Please navigate to the Jobs Portal to submit applications.</p>
+      </div>
+    )
+  }
+};
+
 const HomePage = () => {
   const { user } = useContext(AuthContext);
   const [modalContent, setModalContent] = useState(null);
@@ -75,10 +135,10 @@ const HomePage = () => {
   };
 
   const stats = [
-    { label: 'Placements 2024', value: '92%', icon: '🚀' },
-    { label: 'Partner Companies', value: '150+', icon: '🏢' },
-    { label: 'Highest Package', value: '45 LPA', icon: '💰' },
-    { label: 'Active Job Drives', value: '12', icon: '📅' }
+    { id: 'placements', label: 'Placements 2024', value: '92%', icon: '🚀' },
+    { id: 'partners', label: 'Partner Companies', value: '150%', icon: '🏢' },
+    { id: 'package', label: 'Highest Package', value: '45 LPA', icon: '💰' },
+    { id: 'drives', label: 'Active Job Drives', value: '12', icon: '📅' }
   ];
 
   return (
@@ -119,7 +179,13 @@ const HomePage = () => {
 
       <div className="row g-4 mb-5">
         {stats.map((stat, index) => (
-          <div key={index} className="col-md-3">
+          <div 
+            key={index} 
+            className="col-md-3"
+            onClick={() => setModalContent(statsDetails[stat.id])}
+            style={{ cursor: 'pointer' }}
+            title={`Click to view details about ${stat.label}`}
+          >
             <div className="glass-panel p-4 text-center h-100 transition-hover">
               <div className="fs-1 mb-2">{stat.icon}</div>
               <h2 className="fw-bold text-primary">{stat.value}</h2>

@@ -20,7 +20,28 @@
   margin-top: 0.5rem;
 }
 
+.list-group-item {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(150, 92, 248, 0.15) !important;
+  box-shadow: none !important;
+  color: var(--text-secondary) !important;
+  text-align: left !important;
+  width: 100% !important;
+  padding: 14px 20px !important;
+  border-radius: 0 !important;
+  font-size: 0.95rem;
+  font-weight: 500 !important;
+  transition: all 0.25s ease !important;
+}
+
+.list-group-item:last-child {
+  border-bottom: none !important;
+}
+
 .list-group-item:hover {
-  background: rgba(255, 255, 255, 0.05) !important;
+  background: rgba(150, 92, 248, 0.1) !important;
   color: var(--svu-gold) !important;
+  transform: translateX(6px);
+  box-shadow: none !important;
 }

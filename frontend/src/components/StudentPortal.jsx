@@ -305,7 +305,7 @@ const StudentPortal = () => {
                   <tbody>
                     {jobDrives.map(drive => {
                       const applied = isApplied(drive.id);
-                      const eligible = profile ? profile.cgpa >= drive.minCgpa : false;
+                      const eligible = profile ? (profile.cgpa >= 6.0 && profile.cgpa >= drive.minCgpa) : false;
                       return (
                         <tr key={drive.id}>
                           <td className="fw-bold">{drive.companyName}</td>
@@ -314,9 +314,9 @@ const StudentPortal = () => {
                           <td className="small text-secondary">{new Date(drive.date).toLocaleDateString()}</td>
                           <td>
                             {eligible ? (
-                              <span className="badge bg-success bg-opacity-20 text-success rounded-pill px-3 py-1">Eligible</span>
+                              <span className="badge badge-eligible rounded-pill px-3 py-1">Eligible</span>
                             ) : (
-                              <span className="badge bg-danger bg-opacity-20 text-danger rounded-pill px-3 py-1">Ineligible</span>
+                              <span className="badge badge-ineligible rounded-pill px-3 py-1">Ineligible</span>
                             )}
                           </td>
                           <td>
